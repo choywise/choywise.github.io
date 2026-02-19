@@ -4536,6 +4536,18 @@ textarea {
   font-size: 1.5rem;
 }
 
+.page-footer .footer-right .social .bluesky-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: top;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+
+.page-footer .footer-right .social a:hover .bluesky-icon {
+  opacity: 1;
+}
+
 .page-footer.scrolled .footer-left,
 .page-footer.scrolled .footer-right {
   -webkit-transform: translateY(20px);
