@@ -6865,15 +6865,25 @@ figure.portfolio-wrapper {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 30px 30px;
-  width: 100%;
+  /* width:100% + side margins used to overflow the column; keep it centered. */
+  margin: 26px auto;
+  width: calc(100% - 40px);
   aspect-ratio: 16 / 9;
-  
+
   background: #000000;
   border-radius: 15px;
   border: 4px solid #fff;
   text-align: left;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+  -webkit-transition: -webkit-transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+figure.portfolio-wrapper:hover,
+figure.portfolio-wrapper.hover {
+  -webkit-transform: translateY(-6px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.5);
 }
 figure.portfolio-wrapper * {
   -webkit-box-sizing: border-box;
