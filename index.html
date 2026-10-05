@@ -11,7 +11,7 @@
     <!-- Page Description Here -->
     <meta
       name="description"
-      content="Portfolio Site of Daniel Choi with his experience, skills, and previous works."
+      content="Portfolio of Daniel Choi, Senior Full Stack AI Engineer: experience, AI engineering (agentic AI, RAG, frontier models), skills, and previous work."
     />
     <!-- Disable screen scaling-->
     <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"> -->
@@ -56,6 +56,7 @@
 
     <!-- Main CSS files -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/assistant.css" />
 
     <!-- add alt layout here -->
     <link rel="stylesheet" href="css/style-default.css" />
@@ -128,6 +129,18 @@
               <a href="#services">
                 <i class="icon ion-ios-list-outline"></i>
                 <span class="txt">Skills</span>
+              </a>
+            </li>
+            <li class="nav-item" data-menuanchor="ai">
+              <a href="#ai">
+                <i class="icon ion-ios-bolt-outline"></i>
+                <span class="txt">AI</span>
+              </a>
+            </li>
+            <li class="nav-item" data-menuanchor="assistant">
+              <a href="#assistant">
+                <i class="icon ion-ios-chatbubble-outline"></i>
+                <span class="txt">AI Assistant</span>
               </a>
             </li>
             <li class="nav-item" data-menuanchor="projects">
@@ -636,13 +649,291 @@
           <footer class="section-footer scrolldown">
             <a class="down">
               <span class="icon"></span>
-              <span class="txt">Projects</span>
+              <span class="txt">AI Engineering</span>
             </a>
           </footer>
         </div>
         <!-- End of section wrapper -->
       </div>
       <!-- End of list feature section -->
+
+      <!-- Begin of AI engineering section -->
+      <div
+        class="section section-ai fp-auto-height-responsive"
+        data-section="ai"
+      >
+        <!-- Begin of section wrapper -->
+        <div class="section-wrapper center-vh dir-col anim">
+          <!-- title -->
+          <div class="section-title text-center">
+            <h5 class="title-bg">AI</h5>
+            <h2 class="display-4 display-title anim-2 ai-heading">
+              AI Engineering
+            </h2>
+            <h5 class="anim-2 ai-subtitle">
+              From autonomous agents to retrieval pipelines, I design and ship
+              production-grade GenAI systems on frontier models.
+            </h5>
+          </div>
+
+          <!-- content: two-column list, same structure as the Skills section -->
+          <div class="section-content anim">
+            <div class="ai-list">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-robot"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Agentic AI</h4>
+                      <p>Agents that plan, call tools and finish multi-step workflows, with human-in-the-loop checkpoints.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">LangGraph · Agent SDK · MCP · Tool use</span>
+                        <a class="ai-try" href="#assistant" data-tab="chat">Ask the assistant <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-database"></i></div>
+                    <div class="ai-item-body">
+                      <h4>RAG &amp; Knowledge</h4>
+                      <p>Chunking, embeddings, hybrid search and reranking for grounded, cited answers over private data.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">pgvector · Pinecone · LlamaIndex · GraphRAG</span>
+                        <a class="ai-try" href="#assistant" data-tab="chat">Ask with sources <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-brain"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Frontier Models</h4>
+                      <p>Streaming, structured outputs, prompt caching and model routing across the latest frontier LLMs.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Claude · GPT · Gemini · Llama</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Multi-Agent Systems</h4>
+                      <p>Orchestrator/worker topologies, shared memory and task delegation across specialized agents.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">CrewAI · AutoGen · Temporal · A2A</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-sliders-h"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Fine-Tuning &amp; Serving</h4>
+                      <p>LoRA/QLoRA fine-tuning, distillation and synthetic data, served on fast GPU inference.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">PyTorch · Hugging Face · LoRA · vLLM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Evals &amp; Guardrails</h4>
+                      <p>Evals, red-teaming, PII guardrails and tracing so AI features ship safely and stay reliable.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">LangSmith · Langfuse · Promptfoo · Guardrails</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Multimodal &amp; Voice</h4>
+                      <p>Real-time voice agents, speech-to-text, vision and document understanding in web and mobile apps.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Whisper · Realtime API · TTS · WebRTC</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="ai-item-body">
+                      <h4>AI Coding Agents</h4>
+                      <p>Agentic coding and browser automation that take tasks from spec to tested pull request.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Claude Code · Cursor · Playwright · Computer use</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="ai-stack-line">
+              <span class="label"><i class="fas fa-bolt"></i> Daily drivers</span>
+              Claude · GPT · Gemini · LangChain · LangGraph · LlamaIndex · Hugging Face · PyTorch · pgvector · Pinecone · MCP
+            </p>
+          </div>
+
+          <!-- Arrows scroll down/up -->
+          <footer class="section-footer scrolldown">
+            <a class="down">
+              <span class="icon"></span>
+              <span class="txt">AI Assistant</span>
+            </a>
+          </footer>
+        </div>
+        <!-- End of section wrapper -->
+      </div>
+      <!-- End of AI engineering section -->
+
+      <!-- Begin of AI assistant section -->
+      <div
+        class="section section-assistant fp-auto-height-responsive"
+        data-section="assistant"
+      >
+        <!-- Begin of section wrapper -->
+        <div class="section-wrapper center-vh dir-col anim">
+          <!-- title -->
+          <div class="section-title text-center">
+            <h5 class="title-bg">Ask</h5>
+            <h2 class="display-4 display-title anim-2 ai-heading">AI Assistant</h2>
+            <h5 class="anim-2 ai-subtitle">
+              Ask anything about Daniel, check whether he fits your project,
+              or draft a message to him. Answers come from a live model
+              grounded in this portfolio.
+            </h5>
+          </div>
+
+          <!-- content -->
+          <div class="section-content anim">
+            <div class="asst anim-3" id="assistant-root">
+              <div class="asst-status" id="asst-status" hidden></div>
+
+              <div class="asst-tabs" role="tablist">
+                <button class="asst-tab is-active" data-tab="chat" type="button">
+                  <i class="fas fa-comments"></i>Ask about Daniel
+                </button>
+                <button class="asst-tab" data-tab="fit" type="button">
+                  <i class="fas fa-handshake"></i>Project fit
+                </button>
+                <button class="asst-tab" data-tab="draft" type="button">
+                  <i class="fas fa-envelope"></i>Draft a message
+                </button>
+              </div>
+
+              <div class="asst-panels">
+                <!-- Chat -->
+                <section class="asst-panel is-active" data-panel="chat">
+                  <div class="asst-output scrollable" id="chat-output">
+                    <div class="asst-empty">
+                      <p>
+                        Hi! I'm Daniel's assistant. Ask me about his
+                        experience, skills or projects, and I'll answer with
+                        sources from this site.
+                      </p>
+                      <div class="asst-chips">
+                        <button type="button" data-prompt="What did Daniel work on at Google and at Olive AI?">Work history</button>
+                        <button type="button" data-prompt="Is Daniel a good fit for a role that needs React, Python, LangGraph and Kubernetes?">Is he a fit for my role?</button>
+                        <button type="button" data-prompt="Which of his projects involved AI or real-time features?">AI and real-time projects</button>
+                        <button type="button" data-prompt="What's the best way to contact Daniel?">How do I contact him?</button>
+                      </div>
+                    </div>
+                  </div>
+                  <form class="asst-form" data-feature="chat" autocomplete="off">
+                    <input type="text" name="q" maxlength="2000" placeholder="Ask about Daniel's experience, skills, projects..." required />
+                    <button type="submit" class="asst-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+                  </form>
+                  <details class="asst-how">
+                    <summary><i class="fas fa-info-circle"></i>How this works</summary>
+                    <p>
+                      A tool-using agent on Claude: it searches a knowledge base built from this portfolio,
+                      checks skills against your requirements, and streams the answer back. Expand
+                      <em>Looked up</em> under any reply to see the exact tool calls and results.
+                    </p>
+                  </details>
+                </section>
+
+                <!-- Project fit -->
+                <section class="asst-panel" data-panel="fit">
+                  <div class="asst-output scrollable" id="fit-output">
+                    <div class="asst-empty">
+                      <p>
+                        Describe your project, or the role you're hiring for.
+                        You'll get a short take on how Daniel would approach
+                        it, the most relevant work he has done, and an honest
+                        read on whether it's a fit.
+                      </p>
+                    </div>
+                  </div>
+                  <form class="asst-form is-column" data-feature="fit" autocomplete="off">
+                    <textarea name="q" maxlength="3000" placeholder="What are you building, for whom, with what stack and timeline?" required></textarea>
+                    <div class="asst-actions">
+                      <button type="button" class="asst-link asst-sample" data-feature="fit">Use an example</button>
+                      <button type="submit" class="asst-send"><i class="fas fa-handshake"></i><span>Check fit</span></button>
+                    </div>
+                  </form>
+                  <details class="asst-how">
+                    <summary><i class="fas fa-info-circle"></i>How this works</summary>
+                    <p>
+                      Your description and Daniel's profile go to Claude with a strict JSON schema
+                      (structured outputs), so the assessment always comes back in the same shape and
+                      renders without guesswork. Gaps are listed on purpose; the goal is an honest answer.
+                    </p>
+                  </details>
+                </section>
+
+                <!-- Draft a message -->
+                <section class="asst-panel" data-panel="draft">
+                  <div class="asst-output scrollable" id="draft-output">
+                    <div class="asst-empty">
+                      <p>
+                        Tell me roughly what you want to say and I'll draft a
+                        short message to Daniel that you can edit and send
+                        from your own email app.
+                      </p>
+                    </div>
+                  </div>
+                  <form class="asst-form is-column" data-feature="draft" autocomplete="off">
+                    <div class="asst-row">
+                      <label for="draft-purpose">I'm reaching out about</label>
+                      <select name="purpose" id="draft-purpose">
+                        <option value="project">a project I need built</option>
+                        <option value="hire">a full-time role</option>
+                        <option value="contract">contract or freelance work</option>
+                        <option value="advice">advice or a quick question</option>
+                        <option value="other">something else</option>
+                      </select>
+                    </div>
+                    <textarea name="q" maxlength="3000" placeholder="A few notes: who you are, what you need, timeline, anything else..." required></textarea>
+                    <div class="asst-actions">
+                      <button type="button" class="asst-link asst-sample" data-feature="draft">Use an example</button>
+                      <button type="submit" class="asst-send"><i class="fas fa-magic"></i><span>Draft it</span></button>
+                    </div>
+                  </form>
+                  <details class="asst-how">
+                    <summary><i class="fas fa-info-circle"></i>How this works</summary>
+                    <p>
+                      Claude turns your notes into a short email (subject and body as structured output).
+                      Nothing is stored or sent by this site: the draft opens in your own email client.
+                    </p>
+                  </details>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of section wrapper -->
+      </div>
+      <!-- End of AI assistant section -->
+
 
       <!-- Begin of slider section -->
       <div
@@ -1077,6 +1368,7 @@
 
     <script src="js/lazy-loading.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/assistant.js"></script>
 
     <!-- <script src="js/particlejs/particles-init.js"></script> -->
   </body>
