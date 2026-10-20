@@ -12,7 +12,7 @@ export const PROFILE = {
   phone: "(814) 351-9376",
   site: "https://dancho14.netlify.app/",
   links: {
-    linkedin: "https://www.linkedin.com/in/danicho3/",
+    linkedin: "https://www.linkedin.com/in/wisechoi/",
     github: "https://github.com/legendm00n",
     bluesky: "https://bsky.app/profile/danich6.bsky.social/",
     leetcode: "https://leetcode.com/MadSkyDev/",
