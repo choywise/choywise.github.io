@@ -4,9 +4,9 @@
 // the same data shapes as production, but no model is called and no tokens
 // are spent. Generated text is clearly marked as mock.
 
-import { retrieve } from "../netlify/lib/retrieval.mjs";
-import { runTool, matchSkill } from "../netlify/lib/tools.mjs";
-import { SKILLS, TECH, AI_CAPABILITIES, PROJECTS, PROFILE } from "../netlify/lib/knowledge.mjs";
+import { retrieve } from "../server/lib/retrieval.mjs";
+import { runTool, matchSkill } from "../server/lib/tools.mjs";
+import { SKILLS, TECH, AI_CAPABILITIES, PROJECTS, PROFILE } from "../server/lib/knowledge.mjs";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const json = (data, status = 200) =>

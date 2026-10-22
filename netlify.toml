@@ -9,5 +9,5 @@
   publish = "dist"
 
 [functions]
-  directory = "netlify/functions"
+  directory = "server/functions"
   node_bundler = "esbuild"

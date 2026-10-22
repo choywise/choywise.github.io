@@ -1,6 +1,6 @@
 // Netlify build step: copy the static site into dist/ so that node_modules,
-// netlify/, scripts/ and other tooling never get published as static files.
-// Functions are bundled separately by Netlify from netlify/functions/.
+// server/, worker/, scripts/ and other tooling never get published as static files.
+// Functions are bundled separately by Netlify from server/functions/.
 
 import { cp, mkdir, rm } from "node:fs/promises";
 import path from "node:path";

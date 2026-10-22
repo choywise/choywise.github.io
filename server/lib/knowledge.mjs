@@ -10,7 +10,7 @@ export const PROFILE = {
   location: "Aurora, CO 80015",
   email: "danielchoi@engineer.com",
   phone: "(814) 351-9376",
-  site: "https://dancho14.netlify.app/",
+  site: "https://choywise.github.io/",
   summary:
     "Full Stack AI Engineer with 10+ years of experience shipping products end to end across backend services, frontend applications, cloud infrastructure and AI integration. " +
     "Has built NLP pipelines, AI-powered automation tools and LLM-driven features in production. Focuses on clean code, tested systems and clear communication.",

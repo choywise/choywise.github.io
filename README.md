@@ -1,6 +1,6 @@
 # Hi, I'm Daniel 👋
 
-**Senior Full Stack AI Engineer · Tech Lead** · Aurora, Colorado
+**Senior Full Stack AI Engineer · Tech Lead** 
 
 I have been building software for a living since 2013: backend services,
 frontend apps, cloud infrastructure and, for the last few years, AI features
@@ -8,7 +8,7 @@ that actually make it to production. I care about clean code, tested systems
 and clear communication. Roughly in that order on a good day, and in reverse
 on a deadline.
 
-This repository is my portfolio site: **[dancho14.netlify.app](https://dancho14.netlify.app)**.
+This repository is my portfolio site: **[choywise.github.io](https://choywise.github.io/)**.
 It has a live AI assistant you can ask about me. It only knows what I have
 told it, so it will not make things up. Engineering notes for the site are in
 [DEVELOPMENT.md](DEVELOPMENT.md).
@@ -19,8 +19,8 @@ told it, so it will not make things up. Engineering notes for the site are in
 
 - Owning a product end to end: API design, data model, UI, CI/CD,
   infrastructure, and the on-call that follows.
-- Putting AI into real products: NLP pipelines, LLM features, retrieval,
-  agents and automation that survive contact with real users.
+- Putting AI into products: NLP pipelines, LLM features, retrieval,
+  agents and automation that survive contact with users.
 - Frontend architecture at scale: micro frontends, design systems, and the
   unglamorous performance work (bundle splitting, lazy loading, virtualized
   data views).
@@ -54,7 +54,6 @@ ask the assistant.
   harder.
 - I like building things that make people say "wow", and I am suspicious of
   things that look impressive but do not work.
-- Based in Colorado. The mountains are close, and mostly admired from a desk.
 
 ## Honest self-review
 
@@ -84,3 +83,33 @@ ask the assistant.
 - LeetCode: [MadSkyDev](https://leetcode.com/MadSkyDev/)
 - Or use the "Draft a message" feature on the site and let the assistant
   write the first version for you.
+
+---
+
+## About this repository
+
+The site is static (HTML, CSS, a little jQuery) and is served by GitHub
+Pages. The AI assistant's backend lives in `server/functions` as plain
+`Request -> Response` handlers and runs on a small serverless host, because
+GitHub Pages cannot execute code.
+
+```bash
+npm install
+echo "ANTHROPIC_API_KEY=sk-ant-..." > .env   # local only, gitignored
+npm run dev                  # site + /api on http://localhost:8888
+npm run dev -- --mock        # same, with canned answers and no API key
+npm run test:functions       # backend smoke tests
+```
+
+**Hosting the API.** `.github/workflows/deploy-api.yml` deploys
+`worker/index.mjs` to Cloudflare Workers on every push that touches the
+backend. It needs three repository secrets: `CLOUDFLARE_API_TOKEN`,
+`CLOUDFLARE_ACCOUNT_ID` and `ANTHROPIC_API_KEY` (`AI_LAB_MODEL` is optional).
+After the first deploy, put the Worker URL into `window.ASSISTANT_API_BASE`
+in `index.html`. `wrangler.toml` lists the origins allowed to call the API.
+Netlify also works (`netlify.toml` is kept for that); then the API is
+same-origin and `ASSISTANT_API_BASE` stays empty.
+
+**What the assistant knows** is in `server/lib/knowledge.mjs`. It answers
+only from that file, so add a chunk there when you want it to learn
+something new, then run the tests.

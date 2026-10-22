@@ -8,7 +8,11 @@
 (function () {
   "use strict";
 
-  var API = { health: "/api/health", chat: "/api/chat", fit: "/api/fit", draft: "/api/draft" };
+  // Where the API lives. Empty means same origin (Netlify, `npm run dev`).
+  // On a static host such as GitHub Pages, set window.ASSISTANT_API_BASE in
+  // index.html to the deployed API URL (for example the Cloudflare Worker).
+  var BASE = String(window.ASSISTANT_API_BASE || "").replace(/\/+$/, "");
+  var API = { health: BASE + "/api/health", chat: BASE + "/api/chat", fit: BASE + "/api/fit", draft: BASE + "/api/draft" };
   var CONTACT_EMAIL = "danielchoi@engineer.com";
 
   var SAMPLE_FIT =
@@ -175,7 +179,11 @@
       /* HTML 404 or similar */
     }
     if (!data || typeof data.configured === "undefined") {
-      return setOffline("The /api functions are not deployed on this host (open the site through Netlify, or run npm run dev).");
+      return setOffline(
+        BASE
+          ? "The API at " + BASE + " did not answer as expected."
+          : "This host serves static files only; set ASSISTANT_API_BASE in index.html to the deployed API URL."
+      );
     }
     if (!data.configured) {
       return setOffline("Missing ANTHROPIC_API_KEY on this deployment.");

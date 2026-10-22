@@ -1,5 +1,5 @@
 // Local development server: serves the static site from the repo root and
-// routes /api/* to the Netlify Functions in netlify/functions (same
+// routes /api/* to the API handlers in server/functions (same
 // Request/Response contract Netlify uses), so `npm run dev` gives you the
 // whole thing on one port without the Netlify CLI.
 //
@@ -7,7 +7,7 @@
 //                             needs ANTHROPIC_API_KEY in .env or the shell)
 //   npm run dev -- --mock  -> canned responses, no API key, no token spend
 //
-// Netlify itself ignores this file (only netlify/functions is deployed).
+// Netlify itself ignores this file (it is only for local development).
 
 import http from "node:http";
 import path from "node:path";
@@ -39,7 +39,7 @@ if (MOCK) {
   routes.push(...mock.routes);
   console.log("AI Lab API: MOCK mode (canned responses, no token spend)");
 } else {
-  const dir = path.join(ROOT, "netlify", "functions");
+  const dir = path.join(ROOT, "server", "functions");
   for (const file of await readdir(dir)) {
     if (!file.endsWith(".mjs")) continue;
     const mod = await import(pathToFileURL(path.join(dir, file)).href);
@@ -76,7 +76,7 @@ async function serveStatic(req, res, pathname) {
   let rel = decodeURIComponent(pathname);
   if (rel.endsWith("/")) rel += "index.html";
   const file = path.normalize(path.join(ROOT, rel));
-  if (!file.startsWith(ROOT) || /[\\/](node_modules|netlify|scripts|\.git|\.claude)([\\/]|$)/.test(file)) {
+  if (!file.startsWith(ROOT) || /[\\/](node_modules|server|worker|scripts|\.git|\.claude)([\\/]|$)/.test(file)) {
     res.writeHead(404);
     return res.end("Not found");
   }

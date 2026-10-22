@@ -20,6 +20,7 @@ import {
   getClient,
   guardRequest,
   handleError,
+  withCors,
   HttpError,
   readJson,
   requireText,
@@ -57,7 +58,7 @@ function validateMessages(raw) {
   return messages;
 }
 
-export default async (req, context) => {
+export default withCors(async (req, context) => {
   const blocked = guardRequest(req, context);
   if (blocked) return blocked;
 
@@ -194,4 +195,4 @@ export default async (req, context) => {
       "X-Accel-Buffering": "no",
     },
   });
-};
+});

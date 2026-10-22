@@ -16,6 +16,7 @@ import {
   getClient,
   guardRequest,
   handleError,
+  withCors,
   HttpError,
   json,
   readJson,
@@ -50,7 +51,7 @@ Rules:
 - Do not invent facts about Daniel. You may reference that the visitor found him through his portfolio.
 - Plain text only. No markdown, no bullet points, no subject line inside the body.`;
 
-export default async (req, context) => {
+export default withCors(async (req, context) => {
   const blocked = guardRequest(req, context);
   if (blocked) return blocked;
 
@@ -88,4 +89,4 @@ export default async (req, context) => {
   } catch (err) {
     return handleError(err);
   }
-};
+});

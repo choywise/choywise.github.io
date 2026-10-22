@@ -10,8 +10,11 @@ import Anthropic from "@anthropic-ai/sdk";
 
 export const MODELS = {
   // Model behind the assistant. Sonnet balances quality, speed and cost for a
-  // public-facing chat; override with AI_LAB_MODEL.
-  main: process.env.AI_LAB_MODEL || "claude-sonnet-5-5",
+  // public-facing chat; override with AI_LAB_MODEL. Read lazily so hosts that
+  // inject environment variables per request (Cloudflare Workers) work too.
+  get main() {
+    return process.env.AI_LAB_MODEL || "claude-sonnet-5-5";
+  },
 };
 
 export const LIMITS = {
@@ -68,10 +71,47 @@ export function errorResponse(status, message, extra = {}) {
 export function clientIp(req, context) {
   return (
     (context && context.ip) ||
+    req.headers.get("cf-connecting-ip") ||
     req.headers.get("x-nf-client-connection-ip") ||
     (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
     "unknown"
   );
+}
+
+// ---------------------------------------------------------------------------
+// CORS. The static site may live on a different origin than the API (for
+// example GitHub Pages + a Cloudflare Worker). ALLOWED_ORIGINS is a comma
+// separated list of origins, or "*". Same-origin requests need nothing.
+// ---------------------------------------------------------------------------
+export function corsHeaders(req) {
+  const origin = req.headers.get("origin");
+  if (!origin) return {};
+  const allowed = (process.env.ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const ok = allowed.includes("*") || allowed.includes(origin) || /^https?:\/\/localhost(:\d+)?$/.test(origin);
+  if (!ok) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+    Vary: "Origin",
+  };
+}
+
+/** Wrap a handler so it answers preflights and adds CORS headers. */
+export function withCors(handler) {
+  return async (req, context) => {
+    const cors = corsHeaders(req);
+    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+    const res = await handler(req, context);
+    if (!Object.keys(cors).length) return res;
+    const headers = new Headers(res.headers);
+    for (const [k, v] of Object.entries(cors)) headers.set(k, v);
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+  };
 }
 
 const hits = new Map();

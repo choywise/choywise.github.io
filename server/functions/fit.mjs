@@ -18,6 +18,7 @@ import {
   getClient,
   guardRequest,
   handleError,
+  withCors,
   HttpError,
   json,
   readJson,
@@ -72,7 +73,7 @@ ${capabilitiesSummary()}
 Projects:
 ${projectsSummary()}`;
 
-export default async (req, context) => {
+export default withCors(async (req, context) => {
   const blocked = guardRequest(req, context);
   if (blocked) return blocked;
 
@@ -110,4 +111,4 @@ export default async (req, context) => {
   } catch (err) {
     return handleError(err);
   }
-};
+});

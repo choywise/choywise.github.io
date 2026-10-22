@@ -20,13 +20,13 @@ try {
   }
 } catch {}
 
-const { retrieve } = await import("../netlify/lib/retrieval.mjs");
-const { runTool, matchSkill } = await import("../netlify/lib/tools.mjs");
-const { isConfigured, MODELS } = await import("../netlify/lib/claude.mjs");
-const health = (await import("../netlify/functions/health.mjs")).default;
-const chat = (await import("../netlify/functions/chat.mjs")).default;
-const fit = (await import("../netlify/functions/fit.mjs")).default;
-const draft = (await import("../netlify/functions/draft.mjs")).default;
+const { retrieve } = await import("../server/lib/retrieval.mjs");
+const { runTool, matchSkill } = await import("../server/lib/tools.mjs");
+const { isConfigured, MODELS } = await import("../server/lib/claude.mjs");
+const health = (await import("../server/functions/health.mjs")).default;
+const chat = (await import("../server/functions/chat.mjs")).default;
+const fit = (await import("../server/functions/fit.mjs")).default;
+const draft = (await import("../server/functions/draft.mjs")).default;
 
 let passed = 0;
 async function test(name, fn) {
