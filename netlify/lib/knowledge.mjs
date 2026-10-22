@@ -13,7 +13,7 @@ export const PROFILE = {
   site: "https://dancho14.netlify.app/",
   links: {
     linkedin: "https://www.linkedin.com/in/choiwise/",
-    github: "https://github.com/legendm00n",
+    github: "https://github.com/elitedev88",
     bluesky: "https://bsky.app/profile/danich6.bsky.social/",
     leetcode: "https://leetcode.com/MadSkyDev/",
   },
