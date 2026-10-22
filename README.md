@@ -90,8 +90,9 @@ ask the assistant.
 
 The site is static (HTML, CSS, a little jQuery) and is served by GitHub
 Pages. The AI assistant's backend lives in `server/functions` as plain
-`Request -> Response` handlers and runs on a small serverless host, because
-GitHub Pages cannot execute code.
+`Request -> Response` handlers and runs on a Cloudflare Worker, because
+GitHub Pages cannot execute code and the Anthropic key must never reach the
+browser.
 
 ```bash
 npm install
@@ -101,14 +102,18 @@ npm run dev -- --mock        # same, with canned answers and no API key
 npm run test:functions       # backend smoke tests
 ```
 
-**Hosting the API.** `.github/workflows/deploy-api.yml` deploys
-`worker/index.mjs` to Cloudflare Workers on every push that touches the
-backend. It needs three repository secrets: `CLOUDFLARE_API_TOKEN`,
-`CLOUDFLARE_ACCOUNT_ID` and `ANTHROPIC_API_KEY` (`AI_LAB_MODEL` is optional).
-After the first deploy, put the Worker URL into `window.ASSISTANT_API_BASE`
-in `index.html`. `wrangler.toml` lists the origins allowed to call the API.
-Netlify also works (`netlify.toml` is kept for that); then the API is
-same-origin and `ASSISTANT_API_BASE` stays empty.
+**Deploying the API** (once, from your machine; repeat `npm run api:deploy`
+after backend changes):
+
+```bash
+npx wrangler login                          # opens the browser once
+npm run api:deploy                          # prints the Worker URL
+npx wrangler secret put ANTHROPIC_API_KEY   # paste the key when prompted
+```
+
+Then set `window.ASSISTANT_API_BASE` in `index.html` to the Worker URL and
+push. `wrangler.toml` holds the model name and the origins allowed to call
+the API.
 
 **What the assistant knows** is in `server/lib/knowledge.mjs`. It answers
 only from that file, so add a chunk there when you want it to learn

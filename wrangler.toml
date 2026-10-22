@@ -1,14 +1,14 @@
-# Cloudflare Worker that hosts the assistant API (server/functions) when the
-# static site is served from GitHub Pages.
+# Cloudflare Worker that hosts the assistant API (server/functions).
+# The site itself is static and served by GitHub Pages.
 #
-# Deploys automatically from GitHub Actions (.github/workflows/deploy-api.yml)
-# using these repository secrets:
-#   CLOUDFLARE_API_TOKEN   token with "Workers Scripts: Edit" permission
-#   CLOUDFLARE_ACCOUNT_ID  from the Cloudflare dashboard (Workers & Pages overview)
-#   ANTHROPIC_API_KEY      stored on the Worker as a secret by the workflow
-#   AI_LAB_MODEL           optional, same as the local .env setting
+# First deploy (from your machine):
+#   npx wrangler login                         # opens the browser once
+#   npm run api:deploy                         # prints the Worker URL
+#   npx wrangler secret put ANTHROPIC_API_KEY  # paste the key when prompted
+# Then put the Worker URL into window.ASSISTANT_API_BASE in index.html.
 #
-# Local run (uses .dev.vars for secrets):  npm run api:dev
+# Later backend changes: npm run api:deploy again.
+# Local run with your .env values copied into .dev.vars: npm run api:dev
 
 name = "dancho-assistant-api"
 main = "worker/index.mjs"
@@ -18,6 +18,8 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 # Origins allowed to call this API from the browser (comma separated).
 ALLOWED_ORIGINS = "https://choywise.github.io"
+# Model behind the assistant.
+AI_LAB_MODEL = "claude-sonnet-5"
 
 [observability]
 enabled = true

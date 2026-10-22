@@ -1,13 +1,13 @@
 // Local development server: serves the static site from the repo root and
 // routes /api/* to the API handlers in server/functions (same
-// Request/Response contract Netlify uses), so `npm run dev` gives you the
-// whole thing on one port without the Netlify CLI.
+// Request/Response contract the Cloudflare Worker uses), so `npm run dev` gives you the
+// whole thing on one port without wrangler.
 //
 //   npm run dev            -> http://localhost:8888 (calls the real API,
 //                             needs ANTHROPIC_API_KEY in .env or the shell)
 //   npm run dev -- --mock  -> canned responses, no API key, no token spend
 //
-// Netlify itself ignores this file (it is only for local development).
+// This file is only for local development.
 
 import http from "node:http";
 import path from "node:path";

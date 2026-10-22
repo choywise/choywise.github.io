@@ -1,6 +1,6 @@
 /* AI Assistant - front-end for the visitor-facing features.
  *
- * Talks to the Netlify Functions under /api (see netlify/functions). Plain
+ * Talks to the API under /api (see server/functions). Plain
  * browser JS, no build step: fetch + ReadableStream for the chat's SSE
  * stream, and small renderers for the "project fit" and "draft a message"
  * results.
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  // Where the API lives. Empty means same origin (Netlify, `npm run dev`).
+  // Where the API lives. Empty means same origin (`npm run dev`).
   // On a static host such as GitHub Pages, set window.ASSISTANT_API_BASE in
   // index.html to the deployed API URL (for example the Cloudflare Worker).
   var BASE = String(window.ASSISTANT_API_BASE || "").replace(/\/+$/, "");

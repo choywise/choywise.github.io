@@ -1,7 +1,7 @@
-// Shared helpers for the AI Lab Netlify Functions.
+// Shared helpers for the assistant API handlers (server/functions).
 //
 // - One Anthropic client per function instance (credentials come from the
-//   ANTHROPIC_API_KEY environment variable set in the Netlify dashboard).
+//   ANTHROPIC_API_KEY secret on the Cloudflare Worker, or .env locally).
 // - Small request guards: method check, JSON body limits, a per-IP sliding
 //   window rate limit (per warm instance; it is a speed bump, not a wall), and
 //   a clear 503 when the backend has no credentials so the UI can say so.
@@ -72,7 +72,6 @@ export function clientIp(req, context) {
   return (
     (context && context.ip) ||
     req.headers.get("cf-connecting-ip") ||
-    req.headers.get("x-nf-client-connection-ip") ||
     (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
     "unknown"
   );

@@ -1,6 +1,6 @@
 // Tiny BM25 retriever over the knowledge chunks.
 //
-// This is deliberately dependency-free so it runs inside a Netlify Function
+// This is deliberately dependency-free so it runs inside a Cloudflare Worker
 // with zero cold-start cost. Swap `retrieve()` for an embedding search
 // (pgvector, Pinecone, Voyage, ...) if you want semantic recall; the demo UI
 // only cares about the {chunk, score} shape.

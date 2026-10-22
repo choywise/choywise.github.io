@@ -383,7 +383,7 @@ export const CHUNKS = [
     title: "How this assistant works",
     source: "AI Assistant",
     text:
-      "This assistant on the portfolio is a working feature built by Daniel. It runs on Netlify Functions that call the Anthropic Claude API. " +
+      "This assistant on the portfolio is a working feature built by Daniel. It runs on a Cloudflare Worker that calls the Anthropic Claude API. " +
       "The chat is a tool-using agent that searches this knowledge base with BM25 scoring and shows its sources; the Project fit feature returns a structured assessment using schema-constrained outputs; " +
       "the Draft a message feature turns notes into an email that opens in the visitor's own mail client.",
   },
