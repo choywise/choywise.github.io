@@ -15,8 +15,8 @@ export const PROFILE = {
     "Full Stack AI Engineer with 10+ years of experience shipping products end to end across backend services, frontend applications, cloud infrastructure and AI integration. " +
     "Has built NLP pipelines, AI-powered automation tools and LLM-driven features in production. Focuses on clean code, tested systems and clear communication.",
   links: {
-    linkedin: "https://www.linkedin.com/in/danicho3/",
-    github: "https://github.com/legendm00n",
+    linkedin: "https://www.linkedin.com/in/choiwise/",
+    github: "https://github.com/choywise",
     bluesky: "https://bsky.app/profile/danich6.bsky.social/",
     leetcode: "https://leetcode.com/MadSkyDev/",
   },
