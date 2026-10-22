@@ -79,7 +79,7 @@ ask the assistant.
 ## Say hello
 
 - Email: [danielchoi@engineer.com](mailto:danielchoi@engineer.com)
-- LinkedIn: [linkedin.com/in/danicho3](https://www.linkedin.com/in/danicho3/)
+- LinkedIn: [linkedin.com/in/choiwise](https://www.linkedin.com/in/choiwise/)
 - LeetCode: [MadSkyDev](https://leetcode.com/MadSkyDev/)
 - Or use the "Draft a message" feature on the site and let the assistant
   write the first version for you.
