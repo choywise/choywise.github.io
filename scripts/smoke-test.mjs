@@ -75,7 +75,7 @@ await test("list_projects filters by tech and reports sources", async () => {
   assert.match(out.sources[0].url, /^https:/);
 });
 await test("match_skills scores strong/related/unknown", async () => {
-  const out = JSON.parse((await runTool("match_skills", { required_skills: ["React", "Kafka", "COBOL"] })).text);
+  const out = JSON.parse((await runTool("match_skills", { required_skills: ["React", "Kubernetes", "COBOL"] })).text);
   assert.equal(out.results[0].status, "strong");
   assert.equal(out.results[1].status, "related");
   assert.equal(out.results[2].status, "unknown");

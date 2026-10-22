@@ -6,7 +6,7 @@
 
 import { retrieve } from "../netlify/lib/retrieval.mjs";
 import { runTool, matchSkill } from "../netlify/lib/tools.mjs";
-import { SKILLS, AI_CAPABILITIES, PROJECTS, PROFILE } from "../netlify/lib/knowledge.mjs";
+import { SKILLS, TECH, AI_CAPABILITIES, PROJECTS, PROFILE } from "../netlify/lib/knowledge.mjs";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const json = (data, status = 200) =>
@@ -29,6 +29,7 @@ const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 function skillsIn(text) {
   const vocab = [
     ...SKILLS.map((s) => ({ name: s.name, terms: [s.name, ...s.aliases] })),
+    ...TECH.map((t) => ({ name: t.name, terms: [t.name, ...t.aliases] })),
     ...AI_CAPABILITIES.flatMap((c) => c.tools.map((t) => ({ name: t, terms: [t] }))),
   ];
   const extra = (text.match(/\b(Kubernetes|Docker|GraphQL|Rust|Go|Java|Kafka|Terraform|Snowflake|Spark|Flutter)\b/gi) || []).map(

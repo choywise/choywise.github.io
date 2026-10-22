@@ -7,6 +7,7 @@ import {
   PROFILE,
   PROJECTS,
   SKILLS,
+  TECH,
   experienceSummary,
 } from "./knowledge.mjs";
 import { retrieve } from "./retrieval.mjs";
@@ -86,6 +87,11 @@ export function matchSkill(skill) {
   for (const s of SKILLS) {
     if ([s.name, ...s.aliases].some((a) => includesEither(norm(a), q))) {
       return { skill, status: "strong", evidence: `${s.name}: ${s.years}+ years of experience` };
+    }
+  }
+  for (const t of TECH) {
+    if ([t.name, ...t.aliases].some((a) => includesEither(norm(a), q))) {
+      return { skill, status: "strong", evidence: `${t.name} (${t.context})` };
     }
   }
   for (const c of AI_CAPABILITIES) {
