@@ -17,7 +17,6 @@ export const PROFILE = {
   links: {
     linkedin: "https://www.linkedin.com/in/choiwise/",
     github: "https://github.com/choywise",
-    bluesky: "https://bsky.app/profile/danich6.bsky.social/",
     leetcode: "https://leetcode.com/MadSkyDev/",
   },
 };
@@ -377,7 +376,7 @@ export const CHUNKS = [
     source: "Contact",
     text:
       `You can reach Daniel by email at ${PROFILE.email} or by phone at ${PROFILE.phone}. He is based in ${PROFILE.location}. ` +
-      `Profiles: LinkedIn ${PROFILE.links.linkedin}, GitHub ${PROFILE.links.github}, Bluesky ${PROFILE.links.bluesky}, LeetCode ${PROFILE.links.leetcode}.`,
+      `Profiles: LinkedIn ${PROFILE.links.linkedin}, GitHub ${PROFILE.links.github}, LeetCode ${PROFILE.links.leetcode}.`,
   },
   {
     id: "ai-lab",

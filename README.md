@@ -81,7 +81,6 @@ ask the assistant.
 
 - Email: [danielchoi@engineer.com](mailto:danielchoi@engineer.com)
 - LinkedIn: [linkedin.com/in/danicho3](https://www.linkedin.com/in/danicho3/)
-- Bluesky: [@danich6.bsky.social](https://bsky.app/profile/danich6.bsky.social/)
 - LeetCode: [MadSkyDev](https://leetcode.com/MadSkyDev/)
 - Or use the "Draft a message" feature on the site and let the assistant
   write the first version for you.

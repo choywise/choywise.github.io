@@ -4536,7 +4536,7 @@ textarea {
   font-size: 1.5rem;
 }
 
-.page-footer .footer-right .social .bluesky-icon {
+.page-footer .footer-right .social {
   height: 1.5rem;
   width: 1.5rem;
   vertical-align: top;
@@ -4544,7 +4544,7 @@ textarea {
   opacity: 0.5;
 }
 
-.page-footer .footer-right .social a:hover .bluesky-icon {
+.page-footer .footer-right .social a:hover {
   opacity: 1;
 }
 
