@@ -1,4 +1,4 @@
-/* AI Assistant - front-end for the visitor-facing features.
+/* AI Assistant widget - front-end for the visitor-facing features.
  *
  * Talks to the API under /api (see server/functions). Plain
  * browser JS, no build step: fetch + ReadableStream for the chat's SSE
@@ -25,7 +25,7 @@
     "I'm the founder of a fintech startup. We need a React + Node dashboard with an AI assistant for our support team. " +
     "Timeline is roughly three months, budget is flexible for the right person. Would love a quick intro call.";
 
-  var state = { configured: null, mock: false, chatHistory: [], busy: {} };
+  var state = { configured: null, mock: false, chatHistory: [], busy: {}, open: false, healthChecked: false };
 
   // ---- helpers -------------------------------------------------------------
   function $(sel, root) {
@@ -158,6 +158,7 @@
   }
 
   function nudgeBanner() {
+    if (!state.open) setOpen(true);
     var banner = $("#asst-status");
     banner.classList.remove("is-pulse");
     void banner.offsetWidth; // restart the animation
@@ -489,6 +490,56 @@
     }
   }
 
+  // ---- widget open / close -------------------------------------------------
+  function isPhone() {
+    return $("#assistant-widget").classList.contains("is-phone");
+  }
+
+  function setOpen(open, tab) {
+    var widget = $("#assistant-widget");
+    var launcher = $("#asst-launcher");
+    state.open = open;
+    widget.classList.toggle("is-open", open);
+    document.body.classList.toggle("asst-open", open);
+    launcher.setAttribute("aria-expanded", String(open));
+    // fullpage listens for arrow/space keys; hand the keyboard to the widget while it is open
+    try {
+      if (window.jQuery && jQuery.fn.fullpage && jQuery.fn.fullpage.setKeyboardScrolling) {
+        jQuery.fn.fullpage.setKeyboardScrolling(!open);
+      }
+    } catch (e) {
+      /* fullpage not initialised yet */
+    }
+    if (!open) {
+      launcher.focus({ preventScroll: true });
+      return;
+    }
+    if (tab) activateTab(tab);
+    if (!state.healthChecked) {
+      state.healthChecked = true;
+      checkHealth();
+    }
+    if (!isPhone()) {
+      setTimeout(function () {
+        var field = $(".asst-panel.is-active input[name=q], .asst-panel.is-active textarea[name=q]");
+        if (field && !field.disabled) field.focus({ preventScroll: true });
+      }, 220);
+    }
+  }
+
+  // The site renders phones as a scaled-down 980px layout (no viewport meta
+  // tag), which would make a fixed widget tiny. Scale it back up with CSS
+  // zoom based on how far the layout viewport exceeds the device width, and
+  // switch to a full-screen panel on real phones.
+  function applyScale() {
+    var widget = $("#assistant-widget");
+    var device = (window.screen && window.screen.width) || window.innerWidth;
+    var ratio = device / window.innerWidth;
+    var zoom = ratio < 0.9 ? Math.min(3, 1 / ratio) : 1;
+    widget.style.setProperty("--asst-zoom", String(zoom));
+    widget.classList.toggle("is-phone", zoom >= 1.6);
+  }
+
   // ---- wiring --------------------------------------------------------------
   function submit(feature, value, extra) {
     value = (value || "").trim();
@@ -508,12 +559,26 @@
       });
     });
 
-    // Capability cards link straight into a feature.
-    $$(".ai-try[data-tab]").forEach(function (link) {
-      link.addEventListener("click", function () {
-        activateTab(link.getAttribute("data-tab"));
+    // Launcher, close button, Escape, and every ".asst-open" link (nav item,
+    // capability cards) open or close the widget.
+    $("#asst-launcher").addEventListener("click", function () {
+      setOpen(true);
+    });
+    $(".asst-close").addEventListener("click", function () {
+      setOpen(false);
+    });
+    $$(".asst-open").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        setOpen(true, link.getAttribute("data-tab") || undefined);
       });
     });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && state.open) setOpen(false);
+    });
+    applyScale();
+    window.addEventListener("resize", applyScale);
+    window.addEventListener("orientationchange", applyScale);
 
     $$(".asst-form").forEach(function (form) {
       var feature = form.getAttribute("data-feature");
@@ -553,7 +618,6 @@
       });
     });
 
-    checkHealth();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
