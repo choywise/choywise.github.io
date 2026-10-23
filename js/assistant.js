@@ -266,7 +266,8 @@
       switch (evt.type) {
         case "tool_call": {
           ensureTrace();
-          toolNames.push(evt.name.replace(/_/g, " "));
+          var toolLabel = evt.name.replace(/_/g, " ");
+          if (toolNames.indexOf(toolLabel) === -1) toolNames.push(toolLabel);
           labelTrace();
           var call = el("div", "trace-call", "<b>" + escapeHtml(evt.name) + "</b><code>" + escapeHtml(JSON.stringify(evt.input)) + "</code>");
           trace.appendChild(call);
@@ -293,8 +294,6 @@
           var line = sourcesLine(evt.sources && evt.sources.length ? evt.sources : sources);
           if (line) bot.appendChild(line);
           if (trace) bot.appendChild(trace); // keep the trace below the sources
-          var u = evt.usage || {};
-          bot.appendChild(el("div", "msg-meta", escapeHtml(evt.model || "") + " · " + fmtMs(evt.ms || 0) + (u.output_tokens ? " · " + u.output_tokens + " tokens" : "")));
           break;
         }
         case "error":
@@ -430,7 +429,6 @@
       cta.appendChild(mail);
       card.appendChild(cta);
       ex.bot.appendChild(card);
-      ex.bot.appendChild(el("div", "msg-meta", escapeHtml(data.model) + " · " + fmtMs(data.ms || 0)));
       scrollToEnd(output);
     } catch (err) {
       failExchange(output, ex, err, field, text);
@@ -483,7 +481,6 @@
       box.appendChild(cta);
       box.appendChild(el("span", "asst-note", "Nothing is sent or stored by this site; the message opens in your own email client."));
       ex.bot.appendChild(box);
-      ex.bot.appendChild(el("div", "msg-meta", escapeHtml(data.model) + " · " + fmtMs(data.ms || 0)));
       scrollToEnd(output);
     } catch (err) {
       failExchange(output, ex, err, field, notes);

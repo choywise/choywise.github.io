@@ -500,11 +500,6 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
-.msg-meta {
-  margin-top: 4px;
-  font-size: 0.66rem;
-  color: rgba(255, 255, 255, 0.4);
-}
 
 /* fit result */
 .fit {
