@@ -9,7 +9,7 @@ export const PROFILE = {
   title: "Senior Full Stack AI Engineer | Tech Lead",
   location: "Aurora, CO 80015",
   email: "danielchoi@engineer.com",
-  phone: "(814) 351-9376",
+  phone: "(805) 619-0884",
   site: "https://choywise.github.io/",
   summary:
     "Full Stack AI Engineer with 10+ years of experience shipping products end to end across backend services, frontend applications, cloud infrastructure and AI integration. " +
