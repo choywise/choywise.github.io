@@ -8,7 +8,7 @@
     "dev": "node scripts/dev-server.mjs",
     "test:functions": "node scripts/smoke-test.mjs",
     "api:dev": "wrangler dev",
-    "api:deploy": "wrangler deploy"
+    "api:deploy": "node scripts/deploy-api.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",

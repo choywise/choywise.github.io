@@ -1,11 +1,11 @@
 # Cloudflare Worker that hosts the assistant API (server/functions).
 # The site itself is static and served by GitHub Pages.
 #
-# First deploy (from your machine):
-#   npx wrangler login                         # opens the browser once
-#   npm run api:deploy                         # prints the Worker URL
+# Deploy (from your machine). Put CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
+# in .env once, then:
+#   npm run api:deploy                         # deploys, writes the URL into index.html
 #   npx wrangler secret put ANTHROPIC_API_KEY  # paste the key when prompted
-# Then put the Worker URL into window.ASSISTANT_API_BASE in index.html.
+# Then commit and push index.html.
 #
 # Later backend changes: npm run api:deploy again.
 # Local run with your .env values copied into .dev.vars: npm run api:dev

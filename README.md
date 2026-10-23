@@ -11,7 +11,7 @@ on a deadline.
 This repository is my portfolio site: **[choywise.github.io](https://choywise.github.io/)**.
 It has a live AI assistant you can ask about me. It only knows what I have
 told it, so it will not make things up. Engineering notes for the site are in
-[DEVELOPMENT.md](DEVELOPMENT.md).
+the "About this repository" section at the bottom of this page.
 
 ## The engineer
 
@@ -102,18 +102,19 @@ npm run dev -- --mock        # same, with canned answers and no API key
 npm run test:functions       # backend smoke tests
 ```
 
-**Deploying the API** (once, from your machine; repeat `npm run api:deploy`
-after backend changes):
+**Deploying the API.** Put your Cloudflare credentials in `.env` once
+(`CLOUDFLARE_API_TOKEN` from My Profile > API Tokens, template "Edit Cloudflare
+Workers"; `CLOUDFLARE_ACCOUNT_ID` from Workers & Pages), then:
 
 ```bash
-npx wrangler login                          # opens the browser once
-npm run api:deploy                          # prints the Worker URL
-npx wrangler secret put ANTHROPIC_API_KEY   # paste the key when prompted
+npm run api:deploy                          # deploys, writes the Worker URL into index.html
+npx wrangler secret put ANTHROPIC_API_KEY   # first time only; paste the key when prompted
 ```
 
-Then set `window.ASSISTANT_API_BASE` in `index.html` to the Worker URL and
-push. `wrangler.toml` holds the model name and the origins allowed to call
-the API.
+Commit and push `index.html` and the assistant on the site goes live.
+`wrangler.toml` holds the model name and the origins allowed to call the API.
+On Windows PowerShell use `npm.cmd` and `npx.cmd` if plain `npm` is blocked
+by the script execution policy.
 
 **What the assistant knows** is in `server/lib/knowledge.mjs`. It answers
 only from that file, so add a chunk there when you want it to learn
