@@ -78,44 +78,5 @@ ask the assistant.
 
 ## Say hello
 
-- Email: [danielchoi@engineer.com](mailto:danielchoi@engineer.com)
-- LinkedIn: [linkedin.com/in/choiwise](https://www.linkedin.com/in/choiwise/)
-- LeetCode: [MadSkyDev](https://leetcode.com/MadSkyDev/)
-- Or use the "Draft a message" feature on the site and let the assistant
+- Use the "Draft a message" feature on the site and let the assistant
   write the first version for you.
-
----
-
-## About this repository
-
-The site is static (HTML, CSS, a little jQuery) and is served by GitHub
-Pages. The AI assistant's backend lives in `server/functions` as plain
-`Request -> Response` handlers and runs on a Cloudflare Worker, because
-GitHub Pages cannot execute code and the Anthropic key must never reach the
-browser.
-
-```bash
-npm install
-echo "ANTHROPIC_API_KEY=sk-ant-..." > .env   # local only, gitignored
-npm run dev                  # site + /api on http://localhost:8888
-npm run dev -- --mock        # same, with canned answers and no API key
-npm run test:functions       # backend smoke tests
-```
-
-**Deploying the API.** Put your Cloudflare credentials in `.env` once
-(`CLOUDFLARE_API_TOKEN` from My Profile > API Tokens, template "Edit Cloudflare
-Workers"; `CLOUDFLARE_ACCOUNT_ID` from Workers & Pages), then:
-
-```bash
-npm run api:deploy                          # deploys, writes the Worker URL into index.html
-npx wrangler secret put ANTHROPIC_API_KEY   # first time only; paste the key when prompted
-```
-
-Commit and push `index.html` and the assistant on the site goes live.
-`wrangler.toml` holds the model name and the origins allowed to call the API.
-On Windows PowerShell use `npm.cmd` and `npx.cmd` if plain `npm` is blocked
-by the script execution policy.
-
-**What the assistant knows** is in `server/lib/knowledge.mjs`. It answers
-only from that file, so add a chunk there when you want it to learn
-something new, then run the tests.
