@@ -198,7 +198,7 @@ $(document).on('ready', function () {
 					click: true,
 					submit: true,
 				},
-				normalScrollElements: '.section .scrollable',
+				normalScrollElements: '.section .scrollable, .asst-widget',
 				afterRender: function () {
 					// Fix video background
 					videoBg.maximage('maxcover');

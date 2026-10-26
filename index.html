@@ -5,26 +5,38 @@
 
     <!-- Page Title Here -->
     <title>Daniel Choi</title>
-    <link rel="icon" href="./img/logo.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="./img/favicon.png" type="image/png" sizes="64x64" />
 
     <!-- Meta -->
     <!-- Page Description Here -->
     <meta
       name="description"
-      content="Portfolio Site of Daniel Choi with his experience, skills, and previous works."
+      content="Portfolio of Daniel Choi, Senior Full Stack AI Engineer: experience, AI engineering (agentic AI, RAG, frontier models), skills, and previous work."
     />
     <!-- Disable screen scaling-->
     <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"> -->
 
     <!-- Facebook Meta -->
-    <meta property="og:url" content="https://yaoz.netlify.app" />
+    <meta property="og:url" content="https://choywise.github.io/" />
     <meta property="og:title" content="Daniel Choi" />
-    <meta property="og:description" content="Daniel Choi" />
-    <meta property="og:type" content="Website" />
-    <meta property="og:image" content="/img/content.png" />
-    <meta property="og:image:type" content="content/jpg" />
-    <meta property="og:image:width" content="640" />
-    <meta property="og:image:height" content="319" />
+    <meta
+      property="og:description"
+      content="Portfolio site of Daniel Choi — experience, skills, and previous work."
+    />
+    <meta property="og:type" content="website" />
+    <!-- Bump ?v= when you replace the preview image so Slack/Meta/etc. refetch (they cache by URL). -->
+    <meta
+      property="og:image"
+      content="https://choywise.github.io/img/content.png?v=2"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="911" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://choywise.github.io/img/content.png?v=2"
+    />
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
     <!-- Web fonts and Web Icons -->
@@ -44,6 +56,7 @@
 
     <!-- Main CSS files -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/assistant.css" />
 
     <!-- add alt layout here -->
     <link rel="stylesheet" href="css/style-default.css" />
@@ -74,11 +87,11 @@
       <!-- Begin of logo/brand -->
       <a class="navbar-brand" href="#home">
         <span class="logo">
-          <img class="light-logo" data-src="img/logo.png" alt="Logo" />
+          <img class="light-logo" data-src="img/avatar.jpg" alt="Daniel Choi" />
         </span>
         <span class="text">
           <span class="line">Daniel Choi</span>
-          <span class="line sub">Senior Software Engineer</span>
+          <span class="line sub">Senior Full Stack AI Engineer | Tech Lead</span>
         </span>
       </a>
       <!-- End of logo/brand -->
@@ -116,6 +129,12 @@
               <a href="#services">
                 <i class="icon ion-ios-list-outline"></i>
                 <span class="txt">Skills</span>
+              </a>
+            </li>
+            <li class="nav-item" data-menuanchor="ai">
+              <a href="#ai">
+                <i class="icon ion-ios-bolt-outline"></i>
+                <span class="txt">AI</span>
               </a>
             </li>
             <li class="nav-item" data-menuanchor="projects">
@@ -192,15 +211,12 @@
 
               <!-- begin of right content -->
               <div class="col-4 col-md-4 right-content hidden-sm center-vh">
-                <!-- content -->
                 <div class="section-content">
-                  <!-- illustartion -->
-                  <div class="illustr zoomout-1">
+                  <!-- <div class="illustr zoomout-1">
                     <img class="logo" data-src="img/avatar.png" alt="Logo" />
-                  </div>
+                  </div> -->
                 </div>
               </div>
-              <!-- end of right content -->
             </div>
           </div>
 
@@ -239,9 +255,9 @@
                 ✋ Hi.<br />
                 I've been working as a software developer since
                 <b style="color: red">2013</b>, building everything from sleek
-                UIs to Full Stack apps with <b>React/Next.js</b>,
-                <b>Vue.js</b>, <b>Node.js</b>, <b>Ruby on Rails</b>, and
-                <b>Python</b>. <br /><br />
+                UIs to Full Stack apps with <b>React/Next.js</b>, <b>Vue.js</b>,
+                <b>Node.js</b>, <b>Ruby on Rails</b>, and <b>Python</b>.
+                <br /><br />
                 Recently, I have been exploring <b style="color: red">AI</b>,
                 integrating smart features and machine learning into tech stacks
                 to make apps even more powerful and user friendly.<br />
@@ -389,9 +405,7 @@
                     <h4 class="company">University of Colorado Denver</h4>
                     <span class="duration">2009 ~ 2013</span>
                   </div>
-                  <h5 class="position">
-                    B.S. in Computer Science
-                  </h5>
+                  <h5 class="position">B.S. in Computer Science</h5>
                 </div>
               </div>
 
@@ -411,9 +425,7 @@
                       <span class="role-duration">Jun 2013 ~ Aug 2013</span>
                     </div>
                     <div class="role-item">
-                      <h5 class="position">
-                        Software Engineer II/III
-                      </h5>
+                      <h5 class="position">Software Engineer II/III</h5>
                       <span class="role-duration">Aug 2013 ~ Jun 2016</span>
                     </div>
                   </div>
@@ -434,10 +446,12 @@
                     <h4 class="company">Toptal</h4>
                     <span class="duration">Aug 2016 ~ Mar 2020</span>
                   </div>
-                  <h5 class="position">Full Stack Software Developer (Freelance)</h5>
+                  <h5 class="position">
+                    Full Stack Software Developer (Freelance)
+                  </h5>
                 </div>
               </div>
-              
+
               <!-- Olive AI -->
               <div class="timeline-item anim-3">
                 <div class="timeline-marker ai">
@@ -466,7 +480,7 @@
                     <h4 class="company">Sigma AI</h4>
                     <span class="duration">Nov 2023 ~ Present</span>
                   </div>
-                  <h5 class="position">Senior Software Engineer</h5>
+                  <h5 class="position">Senior Software Engineer | Tech Lead</h5>
                 </div>
               </div>
             </div>
@@ -541,7 +555,7 @@
                 </div>
 
                 <!-- a media object -->
-                
+
                 <div class="media">
                   <div class="img d-flex mr-3">
                     <img data-src="img/skills/angular.png" />
@@ -551,7 +565,7 @@
                     <p>4+ years of experience</p>
                   </div>
                 </div>
-                
+
                 <!-- <div class="media">
                   <div class="img d-flex mr-3">
                     <img data-src="img/skills/svelte.png" />
@@ -629,13 +643,151 @@
           <footer class="section-footer scrolldown">
             <a class="down">
               <span class="icon"></span>
-              <span class="txt">Projects</span>
+              <span class="txt">AI Engineering</span>
             </a>
           </footer>
         </div>
         <!-- End of section wrapper -->
       </div>
       <!-- End of list feature section -->
+
+      <!-- Begin of AI engineering section -->
+      <div
+        class="section section-ai fp-auto-height-responsive"
+        data-section="ai"
+      >
+        <!-- Begin of section wrapper -->
+        <div class="section-wrapper center-vh dir-col anim">
+          <!-- title -->
+          <div class="section-title text-center">
+            <h5 class="title-bg">AI</h5>
+            <h2 class="display-4 display-title anim-2 ai-heading">
+              AI Engineering
+            </h2>
+            <h5 class="anim-2 ai-subtitle">
+              From autonomous agents to retrieval pipelines, I design and ship
+              production-grade GenAI systems on frontier models.
+            </h5>
+          </div>
+
+          <!-- content: two-column list, same structure as the Skills section -->
+          <div class="section-content anim">
+            <div class="ai-list">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-robot"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Agentic AI</h4>
+                      <p>Agents that plan, call tools and finish multi-step workflows, with human-in-the-loop checkpoints.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">LangGraph · Agent SDK · MCP · Tool use</span>
+                        <a class="ai-try asst-open" href="#" data-tab="chat">Ask the assistant <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-database"></i></div>
+                    <div class="ai-item-body">
+                      <h4>RAG &amp; Knowledge</h4>
+                      <p>Chunking, embeddings, hybrid search and reranking for grounded, cited answers over private data.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">pgvector · Pinecone · LlamaIndex · GraphRAG</span>
+                        <a class="ai-try asst-open" href="#" data-tab="chat">Ask with sources <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-brain"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Frontier Models</h4>
+                      <p>Streaming, structured outputs, prompt caching and model routing across the latest frontier LLMs.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Claude · GPT · Gemini · Llama</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item">
+                    <div class="ai-item-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Multi-Agent Systems</h4>
+                      <p>Orchestrator/worker topologies, shared memory and task delegation across specialized agents.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">CrewAI · AutoGen · Temporal · A2A</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-sliders-h"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Fine-Tuning &amp; Serving</h4>
+                      <p>LoRA/QLoRA fine-tuning, distillation and synthetic data, served on fast GPU inference.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">PyTorch · Hugging Face · LoRA · vLLM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Evals &amp; Guardrails</h4>
+                      <p>Evals, red-teaming, PII guardrails and tracing so AI features ship safely and stay reliable.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">LangSmith · Langfuse · Promptfoo · Guardrails</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <div class="ai-item-body">
+                      <h4>Multimodal &amp; Voice</h4>
+                      <p>Real-time voice agents, speech-to-text, vision and document understanding in web and mobile apps.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Whisper · Realtime API · TTS · WebRTC</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ai-item reverse">
+                    <div class="ai-item-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="ai-item-body">
+                      <h4>AI Coding Agents</h4>
+                      <p>Agentic coding and browser automation that take tasks from spec to tested pull request.</p>
+                      <div class="ai-item-meta">
+                        <span class="ai-item-tools">Claude Code · Cursor · Playwright · Computer use</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="ai-stack-line">
+              <span class="label"><i class="fas fa-bolt"></i> Daily drivers</span>
+              Claude · GPT · Gemini · LangChain · LangGraph · LlamaIndex · Hugging Face · PyTorch · pgvector · Pinecone · MCP
+            </p>
+          </div>
+
+          <!-- Arrows scroll down/up -->
+          <footer class="section-footer scrolldown">
+            <a class="down">
+              <span class="icon"></span>
+              <span class="txt">Projects</span>
+            </a>
+          </footer>
+        </div>
+        <!-- End of section wrapper -->
+      </div>
+      <!-- End of AI engineering section -->
+
 
       <!-- Begin of slider section -->
       <div
@@ -653,7 +805,7 @@
           <!-- begin of item -->
           <div class="item row justify-content-between">
             <!-- img-frame-normal demo -->
-            <div class="col-12 col-sm-6 col-md-6 center-vh">
+            <!-- <div class="col-12 col-sm-6 col-md-6 center-vh">
               <div class="section-content anim translateUp">
                 <div class="images text-center">
                   <div class="img-frame-normal">
@@ -671,14 +823,98 @@
                           * Jest/Playwright<br />
                         </p>
                       </figcaption>
-                      <a href="https://hangara.com/" target="_blank"></a>
+                      <a href="https://app.sybill.ai/" target="_blank"></a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-12 col-sm-6 col-md-6 center-vh">
+              <div class="section-content anim translateUp">
+                <div class="images text-center">
+                  <div class="img-frame-normal">
+                    <figure class="portfolio-wrapper">
+                      <img
+                        data-src="img/portfolio/sporttrade.jpg"
+                        alt="Sporttrade"
+                      />
+                      <figcaption>
+                        <h3><span>Sporttrade</span></h3>
+                        <p>
+                          * Ember.js<br />
+                          * Go / Ruby<br />
+                          * PostgreSQL<br />
+                          * Kafka<br />
+                          * Kubernetes / AWS<br />
+                          * Swift / Kotlin<br />
+                          * ELK<br />
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://platform.getsporttrade.com/"
+                        target="_blank"
+                      ></a>
                     </figure>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-6 center-vh">
-              <div class="section-content anim translateUp">
+              <div class="section-content anim">
+                <div class="images text-center">
+                  <div class="img-frame-normal">
+                    <figure class="portfolio-wrapper">
+                      <img
+                        data-src="img/portfolio/hellocare.jpg"
+                        alt="hellocare"
+                      />
+                      <figcaption>
+                        <h3><span>hellocare</span></h3>
+                        <p>
+                          * React / Vite<br />
+                          * Redux<br />
+                          * WebRTC<br />
+                          * Socket.IO<br />
+                          * Node.js<br />
+                          * Azure<br />
+                          * HL7 / FHIR<br />
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://hellocare.solaborate.com/"
+                        target="_blank"
+                      ></a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 center-vh">
+              <div class="section-content anim translateDown">
+                <div class="images text-center">
+                  <div class="img-frame-normal">
+                    <figure class="portfolio-wrapper">
+                      <img data-src="img/portfolio/donna.jpg" alt="Donna" />
+                      <figcaption>
+                        <h3><span>Donna</span></h3>
+                        <p>
+                          * React Router v7<br />
+                          * TypeScript<br />
+                          * Tailwind CSS<br />
+                          * Base UI<br />
+                          * Speech-to-Text / LLM<br />
+                          * WebSockets<br />
+                          * AWS<br />
+                        </p>
+                      </figcaption>
+                      <a href="https://app.askdonna.com/" target="_blank"></a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 center-vh">
+              <div class="section-content anim">
                 <div class="images text-center">
                   <div class="img-frame-normal">
                     <figure class="portfolio-wrapper">
@@ -701,59 +937,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 center-vh">
-              <div class="section-content anim">
-                <div class="images text-center">
-                  <div class="img-frame-normal">
-                    <figure class="portfolio-wrapper">
-                      <img
-                        data-src="img/portfolio/bookvid.jpeg"
-                        alt="bookvid"
-                      />
-                      <figcaption>
-                        <h3><span>Bookvid</span></h3>
-                        <p>
-                          * React/Next<br />
-                          * Node.js<br />
-                          * Python<br />
-                          * Vercel<br />
-                          * AWS<br />
-                          * Docker<br />
-                        </p>
-                      </figcaption>
-                      <a href="https://bookvid.com" target="_blank"></a>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 center-vh">
-              <div class="section-content anim">
-                <div class="images text-center">
-                  <div class="img-frame-normal">
-                    <figure class="portfolio-wrapper">
-                      <img data-src="img/portfolio/groupon.png" alt="Angular" />
-                      <figcaption>
-                        <h3><span>Groupon</span></h3>
-                        <p>
-                          * React/Next.js<br />
-                          * Node.js<br />
-                          * Pyhton<br />
-                          * Maptiler<br />
-                          * AWS<br />
-                          * Playwright<br />
-                          * Lokalise<br />
-                        </p>
-                      </figcaption>
-                      <a href="https://www.groupon.com/" target="_blank"></a>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <!-- img-frame-normal demo -->
-            
+
             <!-- <div class="col-12 col-sm-6 col-md-6 center-vh">
               <div class="section-content anim translateUp">
                 <div class="images text-center">
@@ -805,20 +991,22 @@
                 <div class="images text-center">
                   <div class="img-frame-normal">
                     <figure class="portfolio-wrapper">
-                      <img data-src="img/portfolio/php.png" alt="PHP" />
+                      <img
+                        data-src="img/portfolio/bookvid.jpeg"
+                        alt="bookvid"
+                      />
                       <figcaption>
-                        <h3><span>Cheap Holiday</span></h3>
+                        <h3><span>Bookvid</span></h3>
                         <p>
-                          * HTML/CSS<br />
-                          * JavaScript<br />
-                          * jQuery<br />
-                          * PHP<br />
+                          * React/Next<br />
+                          * Node.js<br />
+                          * Python<br />
+                          * Vercel<br />
+                          * AWS<br />
+                          * Docker<br />
                         </p>
                       </figcaption>
-                      <a
-                        href="https://cheapholidays.holiday/"
-                        target="_blank"
-                      ></a>
+                      <a href="https://bookvid.com" target="_blank"></a>
                     </figure>
                   </div>
                 </div>
@@ -829,20 +1017,19 @@
                 <div class="images text-center">
                   <div class="img-frame-normal">
                     <figure class="portfolio-wrapper">
-                      <img data-src="img/portfolio/jude.jpg" alt="Jude" />
+                      <img data-src="img/portfolio/tillster.jpg" alt="Tillster" />
                       <figcaption>
-                        <h3><span>Jude</span></h3>
+                        <h3><span>Tillster</span></h3>
                         <p>
-                          * React<br />
-                          * Next.js<br />
-                          * Node.js<br />
-                          * Express<br />
-                          * AWS<br />
+                          * React / Next.js<br />
+                          * TypeScript<br />
+                          * Node.js / NestJS<br />
+                          * AWS Lambda / SQS<br />
+                          * DynamoDB / PostgreSQL<br />
                           * Stripe<br />
-                          * Tailwind CSS<br />
                         </p>
                       </figcaption>
-                      <a href="https://www.wearejude.com/" target="_blank"></a>
+                      <a href="https://www.tillster.com/" target="_blank"></a>
                     </figure>
                   </div>
                 </div>
@@ -855,19 +1042,28 @@
                   <div class="img-frame-normal">
                     <figure class="portfolio-wrapper">
                       <img
-                        data-src="img/portfolio/ecommerce-glass.png"
-                        alt="Vue"
+                        data-src="img/portfolio/hangara.png"
+                        alt="Hangar A"
                       />
                       <figcaption>
-                        <h3><span>iMartTree</span></h3>
-                        <p>
-                          * Vue.js<br />
-                          * Vuetify<br />
-                          * Vue BootStrap<br />
-                          * PHP<br />
+                        <h3><span>Hangar A</span></h3>
+                        <p class="stack-2col">
+                          * React<br />
+                          * React Query<br />
+                          * Node.js<br />
+                          * Django<br />
+                          * Golang<br />
+                          * TypeScript<br />
+                          * Socket.io<br />
+                          * Tailwind CSS<br />
+                          * AWS<br />
+                          * Mapbox<br />
+                          * Jest<br />
+                          * Cypress<br />
+                          * SQL<br />
                         </p>
                       </figcaption>
-                      <a href="https://www.imarttree.com/" target="_blank"></a>
+                      <a href="https://platform.prod.hangara.com/" target="_blank"></a>
                     </figure>
                   </div>
                 </div>
@@ -941,11 +1137,11 @@
                     <div class="row">
                       <div class="col-8 col-md-8 col-lg-3">
                         <h5>Phone</h5>
-                        <p>(720) 907-1007</p>
+                        <p>(805) 619-0884</p>
                       </div>
                       <div class="col-8 col-md-8 col-lg-4">
                         <h5>Email</h5>
-                        <p>itsdaniel@myself.com</p>
+                        <p>danielchoi@engineer.com</p>
                       </div>
                       <div class="col-8 col-md-8 col-lg-5">
                         <h5>Address</h5>
@@ -969,7 +1165,10 @@
       <div class="footer-right">
         <ul class="social">
           <li>
-            <a href="https://www.linkedin.com/in/dancho/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/choiwise/"
+              target="_blank"
+            >
               <i class="icon fab fa-linkedin"></i>
             </a>
           </li>
@@ -988,8 +1187,16 @@
               <i class="icon fab fa-slideshare"></i>
             </a>
           </li> -->
+          <!-- <li>
+            <a
+              href="https://bsky.app/profile/danich6.bsky.social/"
+              target="_blank"
+            >
+              <img data-src="img/bluesky.svg" src="img/bluesky.svg" alt="Bluesky" class="bluesky-icon" />
+            </a>
+          </li> -->
           <li>
-            <a href="https://github.com/elitedev88" target="_blank">
+            <a href="https://github.com/choywise" target="_blank">
               <i class="icon fab fa-github"></i>
             </a>
           </li>
@@ -998,18 +1205,107 @@
               <i class="fas fa-code"></i>
             </a>
           </li>
-          <!-- <li>
-            <a
-              href="https://stackoverflow.com/users/23942718/zhaninmotion"
-              target="_blank"
-            >
-              <i class="icon fab fa-stack-overflow"></i>
-            </a>
-          </li> -->
         </ul>
       </div>
     </footer>
     <!-- END OF site footer -->
+
+    <!-- BEGIN OF AI assistant widget (fixed overlay, outside fullpage) -->
+    <div class="asst-widget" id="assistant-widget">
+      <button class="asst-launcher" id="asst-launcher" type="button" aria-expanded="false" aria-controls="assistant-root">
+        <img src="img/avatar.jpg" data-src="img/avatar.jpg" alt="" />
+        <span class="asst-launcher-text">Ask my AI</span>
+        <i class="fas fa-comment-dots"></i>
+      </button>
+
+      <div class="asst" id="assistant-root" role="dialog" aria-label="AI assistant">
+        <header class="asst-header">
+          <img src="img/avatar.jpg" data-src="img/avatar.jpg" alt="" />
+          <div class="asst-header-text">
+            <strong>Daniel's assistant</strong>
+            <span>Answers only from this portfolio. Nothing made up.</span>
+          </div>
+          <button class="asst-close" type="button" aria-label="Close"><i class="fas fa-times"></i></button>
+        </header>
+
+        <div class="asst-status" id="asst-status" hidden></div>
+
+        <div class="asst-tabs" role="tablist">
+          <button class="asst-tab is-active" data-tab="chat" type="button"><i class="fas fa-comments"></i>Ask</button>
+          <button class="asst-tab" data-tab="fit" type="button"><i class="fas fa-handshake"></i>Project fit</button>
+          <button class="asst-tab" data-tab="draft" type="button"><i class="fas fa-envelope"></i>Draft a message</button>
+        </div>
+
+        <div class="asst-panels">
+          <!-- Chat -->
+          <section class="asst-panel is-active" data-panel="chat">
+            <div class="asst-output scrollable" id="chat-output">
+              <div class="asst-empty">
+                <p>Hi! Ask me about Daniel's experience, skills or projects. I answer with sources from this site.</p>
+                <div class="asst-chips">
+                  <button type="button" data-prompt="What did Daniel work on at Google and at Olive AI?">Work history</button>
+                  <button type="button" data-prompt="Is Daniel a good fit for a role that needs React, Python, LangGraph and Kubernetes?">Is he a fit for my role?</button>
+                  <button type="button" data-prompt="Which of his projects involved AI or real-time features?">AI projects</button>
+                  <button type="button" data-prompt="What's the best way to contact Daniel?">How do I contact him?</button>
+                </div>
+              </div>
+            </div>
+            <form class="asst-form" data-feature="chat" autocomplete="off">
+              <input type="text" name="q" maxlength="2000" placeholder="Ask about Daniel..." required />
+              <button type="submit" class="asst-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </section>
+
+          <!-- Project fit -->
+          <section class="asst-panel" data-panel="fit">
+            <div class="asst-output scrollable" id="fit-output">
+              <div class="asst-empty">
+                <p>Describe your project, or the role you're hiring for. You'll get an honest take on how Daniel would approach it, his most relevant work, and whether it's a fit.</p>
+              </div>
+            </div>
+            <form class="asst-form is-column" data-feature="fit" autocomplete="off">
+              <textarea name="q" maxlength="3000" placeholder="What are you building, for whom, with what stack and timeline?" required></textarea>
+              <div class="asst-actions">
+                <button type="button" class="asst-link asst-sample" data-feature="fit">Use an example</button>
+                <button type="submit" class="asst-send"><i class="fas fa-handshake"></i><span>Check fit</span></button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Draft a message -->
+          <section class="asst-panel" data-panel="draft">
+            <div class="asst-output scrollable" id="draft-output">
+              <div class="asst-empty">
+                <p>Tell me roughly what you want to say and I'll draft a short message to Daniel that you can edit and send from your own email app.</p>
+              </div>
+            </div>
+            <form class="asst-form is-column" data-feature="draft" autocomplete="off">
+              <div class="asst-row">
+                <label for="draft-purpose">About</label>
+                <select name="purpose" id="draft-purpose">
+                  <option value="project">a project I need built</option>
+                  <option value="hire">a full-time role</option>
+                  <option value="contract">contract or freelance work</option>
+                  <option value="advice">advice or a quick question</option>
+                  <option value="other">something else</option>
+                </select>
+              </div>
+              <textarea name="q" maxlength="3000" placeholder="A few notes: who you are, what you need, timeline..." required></textarea>
+              <div class="asst-actions">
+                <button type="button" class="asst-link asst-sample" data-feature="draft">Use an example</button>
+                <button type="submit" class="asst-send"><i class="fas fa-magic"></i><span>Draft it</span></button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <footer class="asst-foot">
+          <i class="fas fa-info-circle"></i>
+          A tool-using agent on Claude, grounded in this portfolio. Expand <em>Looked up</em> under a reply to see its lookups.
+        </footer>
+      </div>
+    </div>
+    <!-- END OF AI assistant widget -->
 
     <!-- scripts -->
     <!-- All Javascript plugins goes here -->
@@ -1031,6 +1327,13 @@
 
     <script src="js/lazy-loading.js"></script>
     <script src="js/main.js"></script>
+    <!-- Assistant API location. Leave empty when the API runs on the same host
+         (npm run dev). On GitHub Pages set it to the deployed Cloudflare Worker,
+         e.g. "https://dancho-assistant-api.<your-subdomain>.workers.dev". -->
+    <script>
+      window.ASSISTANT_API_BASE = "https://dancho-assistant-api.go12geousmoxy.workers.dev";
+    </script>
+    <script src="js/assistant.js"></script>
 
     <!-- <script src="js/particlejs/particles-init.js"></script> -->
   </body>

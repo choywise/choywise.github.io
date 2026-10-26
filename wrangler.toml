@@ -1,0 +1,25 @@
+# Cloudflare Worker that hosts the assistant API (server/functions).
+# The site itself is static and served by GitHub Pages.
+#
+# Deploy (from your machine). Put CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
+# in .env once, then:
+#   npm run api:deploy                         # deploys, writes the URL into index.html
+#   npx wrangler secret put ANTHROPIC_API_KEY  # paste the key when prompted
+# Then commit and push index.html.
+#
+# Later backend changes: npm run api:deploy again.
+# Local run with your .env values copied into .dev.vars: npm run api:dev
+
+name = "dancho-assistant-api"
+main = "worker/index.mjs"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Origins allowed to call this API from the browser (comma separated).
+ALLOWED_ORIGINS = "https://choywise.github.io"
+# Model behind the assistant.
+AI_LAB_MODEL = "claude-sonnet-5"
+
+[observability]
+enabled = true
