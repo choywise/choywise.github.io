@@ -15,7 +15,7 @@ export const PROFILE = {
     "Full Stack AI Engineer with 10+ years of experience shipping products end to end across backend services, frontend applications, cloud infrastructure and AI integration. " +
     "Has built NLP pipelines, AI-powered automation tools and LLM-driven features in production. Focuses on clean code, tested systems and clear communication.",
   links: {
-    linkedin: "https://www.linkedin.com/in/choiwise/",
+    // linkedin: "https://www.linkedin.com/in/choiwise/", // temporarily hidden
     github: "https://github.com/choywise",
     leetcode: "https://leetcode.com/MadSkyDev/",
   },
@@ -376,7 +376,8 @@ export const CHUNKS = [
     source: "Contact",
     text:
       `You can reach Daniel by email at ${PROFILE.email} or by phone at ${PROFILE.phone}. He is based in ${PROFILE.location}. ` +
-      `Profiles: LinkedIn ${PROFILE.links.linkedin}, GitHub ${PROFILE.links.github}, LeetCode ${PROFILE.links.leetcode}.`,
+      // LinkedIn temporarily hidden; to restore, uncomment PROFILE.links.linkedin and add `LinkedIn ${PROFILE.links.linkedin}, ` back here.
+      `Profiles: GitHub ${PROFILE.links.github}, LeetCode ${PROFILE.links.leetcode}.`,
   },
   {
     id: "ai-lab",
